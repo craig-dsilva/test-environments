@@ -21,5 +21,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - run: echo ${{ env.ENVIRONMENT_NAME }}
+            - run: echo ${{ vars.ENVIRONMENT_NAME }}
             
