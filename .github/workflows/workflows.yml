@@ -1,24 +1,25 @@
 name: Test environments
 
 on:
-  push:
+    push:
 
 jobs:
-  development:
-    if: github.ref == 'refs/heads/development'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo development
-  testing:
-    if: github.ref == 'refs/heads/testing'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo testing
-  production:
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo ${{ env.ENVIRONMENT_NAME }}
+    development:
+        if: github.ref == 'refs/heads/development'
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - run: echo development
+    testing:
+        if: github.ref == 'refs/heads/testing'
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - run: echo testing
+    production:
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - run: echo ${{ inputs.ENVIRONMENT_NAME }}
+            
