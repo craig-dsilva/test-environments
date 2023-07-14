@@ -15,7 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - run: echo testing
+            - run: echo ${{ env.ENVIRONMENT_NAME }}
     production:
         if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
