@@ -20,6 +20,7 @@ jobs:
     production:
         if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
+        environment: production
         steps:
             - uses: actions/checkout@v3
             - run: echo ${{ env.ENVIRONMENT_NAME }}
