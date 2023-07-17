@@ -21,7 +21,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
         environment: production
-        uses: ./.github/actions/action.yml
+        uses: .github/actions/action.yml
         steps:            
             - uses: actions/checkout@v3
             
