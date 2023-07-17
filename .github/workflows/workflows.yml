@@ -4,20 +4,23 @@ on:
     push:
 
 jobs:
-    development:
-        if: github.ref == 'refs/heads/development'
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - run: echo development
+  development:
+    if: github.ref == 'refs/heads/development'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo development
+
     testing:
-        if: github.ref == 'refs/heads/testing'
-        runs-on: ubuntu-latest
-        environment: testing
-        steps:
-            - uses: actions/checkout@v3
-            - run: echo ${{ env.ENVIRONMENT_NAME }}
+      if: github.ref == 'refs/heads/testing'
+      runs-on: ubuntu-latest
+      environment: testing
+      steps:
+        - uses: actions/checkout@v3
+        - run: echo ${{ env.ENVIRONMENT_NAME }}
+
     production:
         if: github.ref == 'refs/heads/main'
-        uses: ./.github/actions/action.yml
+        runs-on: ubuntu-latest
+        uses: './.github/actions/action.yml'
             
