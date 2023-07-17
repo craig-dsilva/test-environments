@@ -23,5 +23,5 @@ jobs:
         environment: production
         steps:
             - uses: actions/checkout@v3
-            - run: echo ${{ env.ENVIRONMENT_NAME }}
+            - uses: ./.github/actions/action.yml
             
