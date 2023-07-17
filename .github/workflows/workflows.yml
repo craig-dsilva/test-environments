@@ -22,5 +22,6 @@ jobs:
   production:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    uses: './.github/actions/action.yml'
+    steps:
+      - uses: './.github/actions/action.yml'
             
