@@ -21,7 +21,7 @@ jobs:
 
   production:
     if: github.ref == 'refs/heads/main'
-    uses: './.github/actions/action.yml'
     steps:
       - uses: actions/checkout@v3
+    uses: './.github/actions/action.yml'
             
