@@ -1,7 +1,7 @@
 name: Test environments
 
 on:
-    push:
+  push:
 
 jobs:
   development:
