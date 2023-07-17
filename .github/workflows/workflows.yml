@@ -19,9 +19,5 @@ jobs:
             - run: echo ${{ env.ENVIRONMENT_NAME }}
     production:
         if: github.ref == 'refs/heads/main'
-        runs-on: ubuntu-latest
-        environment: production
         uses: ./.github/actions/action.yml
-        steps:            
-            - uses: actions/checkout@v3
             
