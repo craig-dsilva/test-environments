@@ -1,26 +1,12 @@
 name: Test environments
 
 on:
-  push:
+  pull_request:
 
 jobs:
-  development:
-    if: github.ref == 'refs/heads/development'
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo development
-
-  testing:
-    if: github.ref == 'refs/heads/testing'
-    runs-on: ubuntu-latest
-    environment: testing
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo ${{ env.ENVIRONMENT_NAME }}
-
-  production:
-    uses: './.github/actions/action.yml'
-    if: github.ref == 'refs/heads/main'
-    
+      - run: echo Hello World!
             
